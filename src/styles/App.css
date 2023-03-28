@@ -1,0 +1,148 @@
+#main {
+
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text {
+  text-align: center;
+
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("https://st.redbus.in/Images/rdc/HeroRDC.svg");
+  /* Control the height of the image */
+  min-height: 300px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+
+
+/* Add styles to the form container */
+.container-fluid {
+
+  position: relative;
+  margin: 0px;
+  padding: 16px 16px 16px 16px;
+  width: 100vw;
+  height: fit-content;
+  background: linear-gradient(45deg, , white);
+}
+
+
+/* Full-width input fields */
+input[type=text],
+input[type=date] {
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  color: #3e3e52 !important;
+  outline: none;
+}
+
+
+input[type=text]:focus,
+input[type=text]:focus {
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.buton {
+
+  width: 160px;
+  border-width: 0;
+  background-color: #d74f57;
+  color: #fff;
+  letter-spacing: .5px;
+  border-radius: 0 8px 8px 0;
+  padding: 0 !important;
+}
+
+.buton:hover {
+  opacity: 1;
+  border: 1px solid #e20909;
+}
+
+.inputlbl {
+  color: #3e3e52;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 8px 0;
+  font-size: 10px;
+  font-weight: 400;
+  padding-top: 3.5px;
+}
+
+.searchbar {
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+  padding: 0 145px;
+
+
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  z-index: 5;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 12px 0 12px 12px;
+  background-color: #fff;
+  padding: 8px 16px;
+
+}
+
+.btnwrap {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  padding: 18px 16px;
+}
+
+svg {
+  background-color: #d74f57;
+  border-radius: 12px 12px 12px 12px;
+}
+
+#dropdownicon {
+  background-color: white;
+  border-radius: 0%;
+}
+footer {
+  position: relative;
+  bottom: 0%;
+  width: 100%;
+  color: #fff;
+  height: 10%;
+  background-color: #d74f57;
+}
+
+.card-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  cursor: scroll;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.card{
+  border-radius: 50%;
+}
