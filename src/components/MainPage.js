@@ -39,7 +39,7 @@ const MainPage = () => {
 
                         <label className='inputlbl' htmlFor="source">From</label><br />
                         <div className='textboxes f1 textarea'>
-                            <input type="text" id="source" value={source} onChange={(e, searched) => { setSource(e.target.value); setsearched(false) }} required />
+                            <input type="text" id="source" value={source} onChange={(e) => { setSource(e.target.value); setsearched(false) }} required />
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@ const MainPage = () => {
         
             </div>
             {
-        searched && <SeachResult source={source} destination={destination} />
+        searched && <SeachResult source={source} destination={destination} searched={searched} setsearched={setsearched}/>
     }    
 
         </div>

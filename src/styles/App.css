@@ -139,10 +139,15 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  cursor: scroll;
   margin-bottom: 10px;
-  box-sizing: border-box;
 }
 .card{
   border-radius: 50%;
+transition: 1s all ease-in-out;
+}
+
+.card:hover{
+  background-color: #d74f57;
+  transform: translateX(10px);
+  text-transform: uppercase;
 }

@@ -5,8 +5,10 @@ import { useState, useEffect } from 'react';
 
 
 function BusListPage() {
+ 
   const [busData, setBusData] = useState([]);
   const [sortBy, setSortBy] = useState('price-low-to-high');
+ 
   useEffect(() => {
     async function fetchBusData() {
       const response = await fetch('https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses');
