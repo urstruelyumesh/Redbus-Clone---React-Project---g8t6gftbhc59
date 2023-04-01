@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
 
         <nav id='navb' className='navbar fixed-top navbar-expand-xl' style={{backgroundColor: 'black',color:"whitesmoke"}} >
-            <Link to="./MainPage">
+            <Link to="/MainPage">
                 <img className='logo' src="https://st.redbus.in/Images/rdc/rdc-redbus-logo.svg" alt="Logo" height={50} />
             </Link>
 

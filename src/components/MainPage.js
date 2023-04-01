@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import SeachResult from './SearchResult';
-
 import { useContext } from 'react';
 import { dataContext } from './App';
 
@@ -9,8 +8,8 @@ import { dataContext } from './App';
 
 const MainPage = () => {
 
-    const localContext=useContext(dataContext);
-    const {searched, setsearched}=localContext;
+    const localContext1=useContext(dataContext);
+    const {searched, setsearched}=localContext1;
     const [source, setSource] = useState('');
     const [destination, setDestination] = useState('');
     const [date, setDate] = useState('');
@@ -22,15 +21,15 @@ const MainPage = () => {
     }
     const Loadbuses = () => {
         console.log('loadingbuses');
-        {source==''||destination==''?setsearched(false) (alert('Please fill the Source and Destination')): setsearched(true);}
+        {source==''||destination==''?setsearched(false) (alert('Please fill the Source and Destination')): setsearched(true)}
         
 
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid py-2">
         
-            <div className='bg-img my-5'>
+            <div className='bg-img my-5 px-3 py-3'>
                 <div className="hero-image">
                     <div className="hero-text">
                         <h1>Book your journey now with the world's largest bus platform</h1>
@@ -43,9 +42,9 @@ const MainPage = () => {
 
                     <div className='wrap'>
 
-                        <label className='inputlbl' htmlFor="source">From</label><br />
+                        <label className='inputlbl' htmlFor="source">From</label><br/>
                         <div className='textboxes f1 textarea'>
-                            <input type="text" id="source" value={source} onChange={(e) => { setSource(e.target.value); setsearched(false) }} required />
+                            <input className='form-control' type="text" id="source" value={source} onChange={(e) => { setSource(e.target.value); setsearched(false) }} required />
                         </div>
                     </div>
 
@@ -53,12 +52,12 @@ const MainPage = () => {
                     <div className='wrap'>
                         <label className='inputlbl' htmlFor="destination">To</label>
                         <div>
-                            <input type="text" id="destination" value={destination} onChange={(e) => { setDestination(e.target.value); setsearched(false) }} required />
+                            <input className='form-control' type="text" id="destination" value={destination} onChange={(e) => { setDestination(e.target.value); setsearched(false) }} required />
                         </div>
                     </div>
                     <div className='wrap'>
                         <label className='inputlbl' htmlFor="date">Date</label>
-                        <div> <input type="date" id="date" value={date} onChange={(e) => { setDate(e.target.value); setsearched(false) }} required />
+                        <div> <input className='form-control' type="date" id="date" value={date} onChange={(e) => { setDate(e.target.value); setsearched(false) }} required />
                         </div>
                     </div>
                     <button className='buton' onClick={Loadbuses}>
@@ -67,8 +66,7 @@ const MainPage = () => {
             </div>
         
             </div>
-            {searched && <SeachResult source={source} destination={destination} searched={searched} setsearched={setsearched}/>
-    }    
+            {searched && <SeachResult source={source} destination={destination} />  }    
 
         </div>
 

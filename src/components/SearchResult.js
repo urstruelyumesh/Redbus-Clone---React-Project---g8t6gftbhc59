@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react';
 import SeatSelection from './SeatSelection';
 
 export default function SearchResult(props) {
   const [sortBy, setSortBy] = useState('price-low-to-high');
   const [buses, setBuses] = useState([]);
-  
+  const[viewseat,setviewseat]=useState(false);
 
   useEffect(() => {
     const handleSearch = async (source, destination) => {
@@ -78,7 +77,7 @@ export default function SearchResult(props) {
         </button>
       </div>
       {sortedBuses.map((bus) => (
-        <div id={bus.busName} className="displaybus"  >
+        <div id={bus.busName} className="displaybus" >
           <table key={bus.name} className="table table-responsive">
             <thead>
               <tr>
@@ -95,11 +94,11 @@ export default function SearchResult(props) {
                 <td>{bus.arrivalTime}</td>
                 <td>{bus.ticketPrice}/-</td>
               </tr>
-              <tr><td colSpan="4"><button id={bus.id} onClick={(e)=>renderseats(bus.busName)} >VIEW SEATS</button></td></tr>
+              <tr><td colSpan="4"><button id={bus.id} className='btn btn-warning' onClick={()=>renderseats(bus.busName)} >VIEW SEATS</button></td></tr>
             </tbody>
             
           </table>
-          {viewseat && <SeatSelection busname={bus} viewseat={viewseat} setviewseat={setviewseat} searched={props.searched} setsearched={props.setsearched}/>} 
+          {viewseat && <SeatSelection busname={bus} viewseat={viewseat} setviewseat={setviewseat} />} 
         </div>
       ))}
     

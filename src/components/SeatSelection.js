@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/SeatSelection.css';
+import { useContext } from 'react';
+import { dataContext } from './App';
 
 
 const SeatSelection = (props) => {
-    const[viewseat,setviewseat]=useState(false);
+    const localContext=useContext(dataContext);
+    const {setsearched}=localContext;
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -29,11 +32,11 @@ const SeatSelection = (props) => {
             </div>
         );
     };
-
+    let seatNumber=0;
     const renderSeatRow = (rowNumber, seatsPerRow) => {
         const seatRow = [];
         for (let i = 1; i <= seatsPerRow; i++) {
-            const seatNumber = `${rowNumber}${i}`;
+           seatNumber++;
             seatRow.push(renderSeat(seatNumber));
         }
         return (
@@ -64,7 +67,7 @@ const SeatSelection = (props) => {
     
         setSelectedSeats([]);
         props.setviewseat(false);
-        props.setsearched(false);
+       setsearched(false);
     };
 
 
@@ -74,7 +77,7 @@ const SeatSelection = (props) => {
         <div className="seat-selection">
             <h2>Select a Seat</h2>
             <div className="seat-map" key={props.busname}>{renderSeatMap(4, 5)}</div>
-          
+             <button className='btn btn-success my-2' onClick={handleConfirmTicket}>Confirm Ticket</button>
 
             {/* modal */}
             {isModalOpen && <div className="modala container mx-2 my-2"><div className="modala-content">

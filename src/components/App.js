@@ -10,30 +10,29 @@ import BusListPage from './BusListPage';
 import Footer from './Footer';
 import Cards from './Cards';
 import { useState } from 'react';
-
-export const dataContext=createContext()
+export const dataContext = createContext()
 
 const App = () => {
   const [searched, setsearched] = useState(false);
 
   return (
 
-  <div id="main">
-      <dataContext.Provider value={{searched,setsearched}}>
+    <div id="main">
+      <dataContext.Provider value={{ searched, setsearched }}>
 
-      <BrowserRouter>
-        <Navbar />
-        <MainPage/>
-        <Routes>
+        <BrowserRouter>
+          <Navbar />
+          <MainPage />
+          <Routes>
 
-         <Route path='/BusListPage' element={<BusListPage />} />
+            <Route path='/BusListPage' element={<BusListPage />} />
 
-        </Routes>
-        <Cards/>
-        <Footer />
-      </BrowserRouter>
+          </Routes>
+          <Cards />
+          <Footer />
+        </BrowserRouter>
 
-</dataContext.Provider>
+      </dataContext.Provider>
     </div>
   )
 }

@@ -15,7 +15,8 @@ thead{
     align-items: center;
     padding: 5px 5px 5px 5px;
     width: 100%;
-    background-color: whitesmoke;    
+    background-color: rgb(225, 216, 230); 
+    border-radius: 30%;   
 }
 thead:first-of-type th{
     border-bottom-width: 0px;
@@ -62,7 +63,8 @@ th {
 .displaybus {
     width: 100%;
     margin: 5px;
-    background-color: #ffffff;
+    background-color: #fff;
+    
 }
 
 .sort-btn-wrap {
