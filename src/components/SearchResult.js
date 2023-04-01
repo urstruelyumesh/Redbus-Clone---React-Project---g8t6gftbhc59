@@ -5,13 +5,15 @@ import SeatSelection from './SeatSelection';
 export default function SearchResult(props) {
   const [sortBy, setSortBy] = useState('price-low-to-high');
   const [buses, setBuses] = useState([]);
-  const[viewseat,setviewseat]=useState(false);
+  
 
   useEffect(() => {
     const handleSearch = async (source, destination) => {
       const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${source}&destination=${destination}`;
       const response = await fetch(url);
+      
       const data = await response.json();
+      console.log('data',data)
       setBuses(data);
     };
    
@@ -36,12 +38,20 @@ export default function SearchResult(props) {
   };
 
   const sortedBuses = getSortedBuses();
-  const renderseats=()=>{
+  
+  const renderseats=(a)=>{
+    console.log('busname',a)
+    for(let item of buses )
+    {
+      console.log(item)
+      if(item.busName===a)
+      {
     if(!viewseat)
     setviewseat(true)
     else
     setviewseat(false)
-    
+      }
+    }
   }
  
   return (
@@ -85,7 +95,7 @@ export default function SearchResult(props) {
                 <td>{bus.arrivalTime}</td>
                 <td>{bus.ticketPrice}/-</td>
               </tr>
-              <tr><td colSpan="4"><button onClick={renderseats} >VIEW SEATS</button></td></tr>
+              <tr><td colSpan="4"><button id={bus.id} onClick={(e)=>renderseats(bus.busName)} >VIEW SEATS</button></td></tr>
             </tbody>
             
           </table>

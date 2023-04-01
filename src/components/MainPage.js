@@ -2,14 +2,19 @@ import React from 'react'
 import { useState } from 'react';
 import SeachResult from './SearchResult';
 
+import { useContext } from 'react';
+import { dataContext } from './App';
 
 
 
 const MainPage = () => {
+
+    const localContext=useContext(dataContext);
+    const {searched, setsearched}=localContext;
     const [source, setSource] = useState('');
     const [destination, setDestination] = useState('');
     const [date, setDate] = useState('');
-    const [searched, setsearched] = useState(false);
+
 
     const changevalues = () => {
         setDestination(source);
@@ -24,7 +29,8 @@ const MainPage = () => {
 
     return (
         <div className="container-fluid">
-            <div className='bg-img'>
+        
+            <div className='bg-img my-5'>
                 <div className="hero-image">
                     <div className="hero-text">
                         <h1>Book your journey now with the world's largest bus platform</h1>
@@ -43,7 +49,7 @@ const MainPage = () => {
                         </div>
                     </div>
 
-                    <svg onClick={changevalues} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="100"><path d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path></svg>
+                    <svg  onClick={changevalues} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="100"><path d="M7.72 21.78a.75.75 0 0 0 1.06-1.06L5.56 17.5h14.69a.75.75 0 0 0 0-1.5H5.56l3.22-3.22a.75.75 0 1 0-1.06-1.06l-4.5 4.5a.75.75 0 0 0 0 1.06l4.5 4.5Zm8.56-9.5a.75.75 0 1 1-1.06-1.06L18.44 8H3.75a.75.75 0 0 1 0-1.5h14.69l-3.22-3.22a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5Z"></path></svg>
                     <div className='wrap'>
                         <label className='inputlbl' htmlFor="destination">To</label>
                         <div>
@@ -61,8 +67,7 @@ const MainPage = () => {
             </div>
         
             </div>
-            {
-        searched && <SeachResult source={source} destination={destination} searched={searched} setsearched={setsearched}/>
+            {searched && <SeachResult source={source} destination={destination} searched={searched} setsearched={setsearched}/>
     }    
 
         </div>

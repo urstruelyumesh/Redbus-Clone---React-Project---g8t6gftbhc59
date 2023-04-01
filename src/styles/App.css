@@ -6,15 +6,18 @@
 
 .hero-text {
   text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
 .bg-img {
+  
   /* The image used */
   background-image: url("https://st.redbus.in/Images/rdc/HeroRDC.svg");
   /* Control the height of the image */
   min-height: 300px;
   /* Center and scale the image nicely */
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,13 +29,14 @@
 
 /* Add styles to the form container */
 .container-fluid {
-
+  background: linear-gradient(45deg,red,white);
   position: relative;
   margin: 0px;
   padding: 16px 16px 16px 16px;
   width: 100vw;
   height: fit-content;
-  background: linear-gradient(45deg, , white);
+  border-radius: 12%;
+  
 }
 
 
@@ -120,10 +124,12 @@ svg {
   border-radius: 12px 12px 12px 12px;
 }
 
+
 #dropdownicon {
   background-color: white;
   border-radius: 0%;
 }
+
 footer {
   position: relative;
   bottom: 0%;
@@ -133,7 +139,7 @@ footer {
   background-color: #d74f57;
 }
 
-.card-wrap{
+.card-wrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -141,13 +147,43 @@ footer {
   justify-content: space-around;
   margin-bottom: 10px;
 }
-.card{
+
+.card {
   border-radius: 50%;
-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
 }
 
-.card:hover{
+.card:hover {
   background-color: #d74f57;
   transform: translateX(10px);
   text-transform: uppercase;
+}
+
+.logo {
+
+  transition: 2s all ease;
+}
+
+.logo:hover {
+  transform: translateX(2em);
+
+}
+
+.haha {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  font-weight: bolder;
+  box-shadow: 0px 0px;
+  transition: 1s all ease-in-out;
+  text-transform: uppercase;
+
+}
+
+.haha:hover {
+  box-shadow: 2px 1px;
+  transition: 1s all ease-in-out;
+  color: aliceblue;
+
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 20%;
 }

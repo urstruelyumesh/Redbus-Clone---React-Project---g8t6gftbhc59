@@ -3,6 +3,7 @@ import '../styles/SeatSelection.css';
 
 
 const SeatSelection = (props) => {
+    const[viewseat,setviewseat]=useState(false);
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -69,23 +70,18 @@ const SeatSelection = (props) => {
 
 
     return (
+        
         <div className="seat-selection">
             <h2>Select a Seat</h2>
-            <div className="seat-map">{renderSeatMap(4, 5)}</div>
-            <div className="selected-seat">
-                {selectedSeats.length > 0
-                    ? `Selected Seats: ${selectedSeats.join(', ')}`
-                    : 'Please select a seat'}
-            </div>
-            <button className="btn-success my-2" onClick={handleConfirmTicket}>
-                Confirm Ticket
-            </button>
+            <div className="seat-map" key={props.busname}>{renderSeatMap(4, 5)}</div>
+          
 
             {/* modal */}
             {isModalOpen && <div className="modala container mx-2 my-2"><div className="modala-content">
 
                 <h2 className='my-2'>Payment Details </h2>
                 {selectedSeats.length > 0 ? (<div>
+                {console.log(props.busname)}
                     <h4>Booking Details</h4>
                     <p>Seats Booked: {selectedSeats.join(', ')}</p>
                    <p>Bus:{props.busname.busName}</p>
