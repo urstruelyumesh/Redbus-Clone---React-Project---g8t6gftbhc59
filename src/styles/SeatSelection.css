@@ -49,15 +49,21 @@
   }
   .modala {
     
+    font-weight: bold;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(40deg,white,blue);
+    top: 10%;
+    left: 10%;
+    bottom: 1%;
+    right: 10%;
+    background: linear-gradient(45deg,white,rgb(255, 55, 0));
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 100;
   }
+  
   
