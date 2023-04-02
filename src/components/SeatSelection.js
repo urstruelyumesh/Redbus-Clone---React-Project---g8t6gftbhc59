@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/SeatSelection.css';
 import { useContext } from 'react';
 import { dataContext } from './App';
+import Navbar from './Navbar';
 
 
 const SeatSelection = (props) => {
@@ -80,9 +81,9 @@ const SeatSelection = (props) => {
              <button className='btn btn-success my-2' onClick={handleConfirmTicket}>Confirm Ticket</button>
 
             {/* modal */}
-            {isModalOpen && <div className="modala container mx-2 my-2"><div className="modala-content">
-
-                <h2 className='my-2'>Payment Details </h2>
+            {isModalOpen && <div className="container mx-5 my-3">
+            <div className="modala">
+                <h2 className='my-2 text-center'>Payment Details </h2>
                 {selectedSeats.length > 0 ? (<div>
                 {console.log(props.busname)}
                     <h4>Booking Details</h4>
@@ -95,15 +96,15 @@ const SeatSelection = (props) => {
                    <p>Total Fare:{props.busname.ticketPrice*selectedSeats.length} Rs</p>
                     <button className='btn btn-primary my-2'>PAY </button>
                     {console.log(props.busname)}
-
+                    <button className="btn btn-danger my-2" onClick={handleModalClose}>
+                    Cancel
+                </button>
                 </div>
 
                 ) : (
                     <p>No seats selected</p>
                 )}
-                <button className="btn btn-danger my-2" onClick={handleModalClose}>
-                    Cancel
-                </button>
+                
             </div>
             </div>
             }

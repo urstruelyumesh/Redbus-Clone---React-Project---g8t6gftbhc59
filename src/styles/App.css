@@ -1,30 +1,87 @@
 #main {
-
   width: 100%;
   height: 100%;
 }
 
-.hero-text {
-  text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+.checkbox {
+  opacity: 0;
+  position: absolute;
 }
 
-.bg-img {
-  background-image: url("https://st.redbus.in/Images/rdc/HeroRDC.svg");
-  height: 300px;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#413939;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
   position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
+
+.hero-wrap{
+  position: relative;
+}
+.hero-content{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  top: 34%;
+}
+.hero-tag {
+  position: relative;
+  color: #bd1d28;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  
 
 }
 
+.hero-image {
+  height: 199px;
+  overflow: hidden;
+  background-size: cover;
+  width: 100%;
+  background-repeat: round;
+  margin-top: 81px;
+  object-fit: cover;
+}
 
 
 /* Add styles to the form container */
 .container-fluid {
-  background: linear-gradient(45deg,red,white);
+  
   position: relative;
   border-bottom-right-radius: 12%;
   border-bottom-left-radius: 12%;
@@ -80,10 +137,11 @@ input[type=text]:focus {
 
 .searchbar {
   transform: translateY(-50%);
-  width: 100%;
+ 
   display: flex;
   flex-wrap: wrap;
-  
+  flex-direction: row;
+  position: relative;
   padding: 0 145px;
 
 

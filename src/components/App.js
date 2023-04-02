@@ -14,14 +14,16 @@ export const dataContext = createContext()
 
 const App = () => {
   const [searched, setsearched] = useState(false);
+  const [theme,settheme]=useState('dark');
+ 
 
   return (
 
-    <div id="main">
-      <dataContext.Provider value={{ searched, setsearched }}>
+    <div id="main" className={theme}>
+      <dataContext.Provider value={{ searched, setsearched,theme,settheme }}>
 
         <BrowserRouter>
-          <Navbar />
+          <Navbar/>
           <MainPage />
           <Routes>
 

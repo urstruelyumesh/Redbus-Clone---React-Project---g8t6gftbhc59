@@ -8,8 +8,8 @@ import { dataContext } from './App';
 
 const MainPage = () => {
 
-    const localContext1=useContext(dataContext);
-    const {searched, setsearched}=localContext1;
+    const localContext=useContext(dataContext);
+    const {searched, setsearched,theme}=localContext;
     const [source, setSource] = useState('');
     const [destination, setDestination] = useState('');
     const [date, setDate] = useState('');
@@ -29,16 +29,16 @@ const MainPage = () => {
     return (
         <div className="container-fluid py-2">
         
-            <div className='bg-img my-5 px-3 py-3'>
-                <div className="hero-image">
-                    <div className="hero-text">
-                        <h1>Book your journey now with the world's largest bus platform</h1>
-
+            
+                <div className="hero-wrap">
+                    <div className="hero-content">
+                        <h1 className='hero-tag my-2'>Book your journey now with the world's largest bus platform</h1>
                     </div>
+                    <img src='https://st.redbus.in/Images/rdc/HeroRDC.svg' className='hero-image'/>
                 </div>
-            </div>
+            
             <div>
-                <div className='searchbar'>
+                <div className='searchbar my-2'>
 
                     <div className='wrap'>
 

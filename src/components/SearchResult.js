@@ -10,7 +10,6 @@ export default function SearchResult(props) {
     const handleSearch = async (source, destination) => {
       const url = `https://content.newtonschool.co/v1/pr/63b70222af4f30335b4b3b9a/buses?source=${source}&destination=${destination}`;
       const response = await fetch(url);
-      
       const data = await response.json();
       console.log('data',data)
       setBuses(data);
